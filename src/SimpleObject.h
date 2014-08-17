@@ -8,6 +8,8 @@
 
 #pragma once
 
+//abstract class base that only contains a name
+
 class SimpleObjectBase {
     
 public:
@@ -24,8 +26,7 @@ private:
     
 };
 
-
-class Device;
+//abstract state base, contains only a global function but could have other virtual functions
 
 class StateBase : public SimpleObjectBase {
     
@@ -41,6 +42,9 @@ public:
     void printState() { std::cout << getName() <<std::endl; }
     
 };
+
+//Device is a genertic object that maintains state and theoretically needs different implementation based on that state
+//Device is the context for the states
 
 class Device : public SimpleObjectBase {
     
@@ -68,6 +72,8 @@ private:
     friend class State1;
     friend class State2;
 };
+
+//Concrete states that inherit the base class, these know how and when to swtich to one another. the Contex doest need to know more than how to call the vitual state change functions, the states do the rest.  They can look into the context for more information if need be via the context ptr.
 
 class State1 : public StateBase {
     
