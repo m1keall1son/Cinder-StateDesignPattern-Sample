@@ -4,7 +4,7 @@
 //
 //  Created by Mike Allison on 8/16/14.
 //
-//
+// lifted from: http://www.codeproject.com/Articles/509234/The-State-Design-Pattern-vs-State-Machine
 
 #pragma once
 
