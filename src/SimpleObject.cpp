@@ -9,13 +9,15 @@
 #include "SimpleObject.h"
 
 void Device::initialize(){
-    mState = State1Ref( new State1(this) ); 
+    mState =  new State1(this);
 }
 
 void State1::setState2(){
-    mContext->mState = State2Ref( new State2( mContext ) );
+    delete mContext->mState;
+    mContext->mState = new State2( mContext );
 }
 
 void State2::setState1(){
-    mContext->mState = State1Ref( new State1( mContext ) );
+    delete mContext->mState;
+    mContext->mState = new State1( mContext );
 }

@@ -42,8 +42,6 @@ public:
     
 };
 
-using StateBaseRef = std::shared_ptr<StateBase>;
-
 class Device : public SimpleObjectBase {
     
 public:
@@ -65,14 +63,11 @@ private:
     
     void initialize();
     
-    StateBaseRef mState;
+    StateBase* mState;
     
     friend class State1;
     friend class State2;
 };
-
-using State1Ref = std::shared_ptr<class State1>;
-using State2Ref = std::shared_ptr<class State2>;
 
 class State1 : public StateBase {
     
