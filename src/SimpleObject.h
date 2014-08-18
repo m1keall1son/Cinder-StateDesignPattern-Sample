@@ -80,10 +80,10 @@ class State1 : public StateBase {
 public:
     explicit State1( Device * context ) : StateBase("State1"), mContext(context) {}
     
-    void setState1(){
+    void setState1() override {
         //Do nothing I am in State 1
     }
-    void setState2();
+    void setState2() override;
     
 private:
     
@@ -96,8 +96,8 @@ class State2 : public StateBase {
 public:
     explicit State2( Device * context ) : StateBase("State2"), mContext(context) {}
     
-    void setState1();
-    void setState2(){
+    void setState1() override;
+    void setState2() override {
         //Do nothing I am in State 2
     }
     
